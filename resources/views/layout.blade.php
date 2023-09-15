@@ -22,11 +22,19 @@
             <ul class="menu-button">
                
                     <li class="n-login-header"></li>
-               
-                <li><a href="/logout" class="n-login-header"><i class="fa fa-sign-in"></i>se deconnecter</a></li>
-                <li><a href="/inscription" class="n-login-header"><i class="fa fa-user-plus"></i>inscription Etudiant</a></li>
-                <li><a href="/formentreprise" class="n-login-header"><i class="fa fa-user-plus"></i>inscription Entreprise</a></li>
+               @guest
+                   @if (Route::has('inscription.store'))
+                   <li><a href="/inscription" class="n-login-header"><i class="fa fa-user-plus"></i>inscription Etudiant</a></li>
+                   @endif
+                   @if (Route::has('inscrientreprise.store'))
+                   <li><a href="/formentreprise" class="n-login-header"><i class="fa fa-user-plus"></i>inscription Entreprise</a></li>
+                   @endif
 
+                      
+                   @else
+                   <li><a href="/logout" class="n-login-header"><i class="fa fa-sign-in"></i>se deconnecter</a></li>
+ 
+               @endguest
                
             </ul>
 

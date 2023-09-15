@@ -12,9 +12,18 @@ class poste extends Model
         
         'description',
         'user_id',
+     
      ];
      public function user(){
         return $this->belongsTo(user::class);
     }
- }
+    public function description(){
+        return $this->belongsTo(poste::class);
+    }
+    
+}
+
+   
+   
+
 

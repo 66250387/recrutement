@@ -79,7 +79,7 @@
                                                             </div>
                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                 <div class="form-group">
-                                                                    <label>Password</label>
+                                                                    <label>mot de passe</label>
                                                                     <input class="form-control" type="password" name="password" value="{{old('password')}}"/>
                                                                     @error('password')
                                                                     <font color="red">{{$message}}</font>
@@ -88,7 +88,7 @@
                                                             </div>
                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                 <div class="form-group">
-                                                                    <label>Confirm Password</label>
+                                                                    <label>Confirmer le mot de passe </label>
                                                                     <input class="form-control" type="password" name="password_confirmation" value="{{old('password_confirmation')}}"/>
                                                                     @error('password_confirmation')
                                                                     <font color="red">{{$message}}</font>

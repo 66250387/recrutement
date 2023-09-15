@@ -26,6 +26,14 @@ class EntrepriseController extends Controller
         $Etudiants= etudiant::all();
         return view('entreprise.etudiant',compact('Etudiants'));
     }
+    public function supprimerentre($id)
+    {
+        $Entreprise = entreprise::find($id);
 
+   
+        $Entreprise->delete();
+      
+        return redirect('admin/entreprise');
+    }
  
 }

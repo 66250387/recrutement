@@ -12,13 +12,23 @@
       </a>
     </li>
     
+    <li class="nav-item">
+      <a class="nav-link text-white " href="{{route('page')}}">
+        
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="material-icons opacity-10"></i>
+          </div>
+        
+        <span class="nav-link-text ms-1"> page d'acceuil</span>
+      </a>
+      </li>
     
       
     <li class="nav-item">
       <a class="nav-link text-white " href="{{route('listeetudiant')}}">
         
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">receipt_long</i>
+            <i class="material-icons opacity-10"></i>
           </div>
         
         <span class="nav-link-text ms-1">liste des Etudiants</span>
@@ -30,24 +40,24 @@
 <a class="nav-link text-white " href="{{route('annoncejob')}}">
   
     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-      <i class="material-icons opacity-10">view_in_ar</i>
+      <i class="material-icons opacity-10"></i>
     </div>
   
   <span class="nav-link-text ms-1"> ANNONCE</span>
 </a>
 </li>
 
+
 <li class="nav-item">
-  <a class="nav-link text-white " href="{{route('page')}}">
+  <a class="nav-link text-white " href="{{route('annonceliste')}}">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">view_in_ar</i>
+        <i class="material-icons opacity-10"></i>
       </div>
     
-    <span class="nav-link-text ms-1"> page d'acceuil</span>
+    <span class="nav-link-text ms-1"> liste des annonces</span>
   </a>
   </li>
-
 
 
 <li class="nav-item">

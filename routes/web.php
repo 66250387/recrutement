@@ -41,6 +41,16 @@ Route::get('listeetudiant', [EntrepriseController::class, 'etudiantIndex'])->nam
 // logout
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
+Route::get('suprimer/{poste}', [UserController::class, 'supprimer']);
+
+Route::get('suprimerat/{Entreprise}', [EntrepriseController::class, 'supprimerentre']);
+
+Route::get('suprimeret/{Etudiant}', [EtudiantController::class, 'supprimeretu']);
+
+
+// Route::delete('listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
+
+
 // login
 Route::get('login', [UserController::class, 'login']);
 Route::post('login', [UserController::class, 'loginstore'])->name('login.store');
@@ -53,7 +63,7 @@ Route::get('etudiant', [EtudiantController::class, 'etudiant'])->name('etudiant.
 
 
 //incription
-Route::get('inscription', [UserController::class, 'create'])->middleware('guest');
+Route::get('inscription', [UserController::class, 'create'])->name('inscription')->middleware('guest');
 Route::post('inscription', [UserController::class, 'store'])->name('inscription.store');
 
 //formentreprise
@@ -64,6 +74,9 @@ Route::post('formentreprise', [UserController::class, 'entreprisestore'])->name(
 Route::get('poste', [PosteController::class, 'show'])->name('annoncejob');
 Route::post('Poste', [PosteController::class, 'postestore'])->name('postestore.store');
 
+//modifier un poste
+Route::get('modiposte', [PosteController::class, 'modishow'])->name('modiannoncejob');
+Route::post('modiPoste', [PosteController::class, 'modipostestore'])->name('modipostestore.store');
 
 
 
@@ -77,9 +90,22 @@ Route::get('acceuil', [UserController::class, 'pageacceuil'])->name('welcome');
 Route::post('acceuil', [UserController::class, 'acceuilstore'])->name('page');
 
 
+//Edit Listing
+Route::get('poste/{poste}/edit', [ListingController::class, 'edit'])->middleware('auth');
+
+//Update Listing
+Route::put('poste/{poste}', [ListingController::class, 'update'])->middleware('auth');
+
+//poster un emplois
+Route::get('listeannonce', [PosteController::class, 'liste'])->name('annonceliste');
+Route::post('listeannonce', [PosteController::class, 'annoncestore'])->name('annoncestore.store');
+
+
+//Delete Listing
+Route::delete('poste/{poste}', [ListingController::class, 'destroy'])->middleware('auth');
 
 // Route::post('/logout', [AuthController::class,'logout'])->name('auth.logout');
-// Route::post('connexion', [AuthController::class,'connexion'])->name('connexion');
+// Route::post('supprimer', [!userController::class,'suppri'])->name('usersupprimer');
 
 // Route::controller(GerantController::class)->group(function(){
     // Route::get('/index', 'gerantIndex')->name('gerant.index');

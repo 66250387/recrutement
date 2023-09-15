@@ -11,8 +11,7 @@
 <link rel="icon" type="image/png" href="./assets/img/favicon.png">
 
 <title>
-  
-   Material Dashboard 2  by Creative Tim
+bienvenue 
  
 </title>
 
@@ -91,27 +90,20 @@
     <table class="table">
       <thead>
         <tr>
-        
-          <th scope="col">Nom</th>
-          <th scope="col">Email</th>
-          <th scope="col">Domaine</th>
-          <th scope="col">Ville</th>
+
+          <th scope="col">description</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($entreprises as $entreprise)
+        @foreach ($postes as $poste)
         <tr>
-          <td>{{$entreprise->user->nom }}</td>
-          <td>{{$entreprise->user->email }}</td>
-          <td>{{$entreprise->domaine }}</td>
-          <td>{{$entreprise->ville }}</td>
+          <td>{{$poste->description }}</td>
           <td>
-           
-                          <a href="{{url('suprimerat/'.$entreprise->id)}}" class="btn btn-danger" onclick="if(confirm('Voulez-vous supprimer cette inscription?')){document.getElementById('form-{{$entreprise->id}}').submit()}">Supprimer</a>
-
             
-           
+            <a href="{{route('modiannoncejob')}}" class="btn btn-info"> modifier </a>
+            <a href="{{url('suprimer/'.$poste->id)}}" class="btn btn-danger" onclick="if(confirm('Voulez-vous supprimer cette inscription?')){document.getElementById('form-{{$poste->id}}').submit()}">Supprimer</a>
+          </td>
           </td>
         </tr>
         @endforeach
@@ -268,100 +260,12 @@
     </div>
 </div>
 
-      
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!--   Core JS Files   -->
 <script src="./assets/js/core/popper.min.js" ></script>
 <script src="./assets/js/core/bootstrap.min.js" ></script>
 <script src="./assets/js/plugins/perfect-scrollbar.min.js" ></script>
 <script src="./assets/js/plugins/smooth-scrollbar.min.js" ></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

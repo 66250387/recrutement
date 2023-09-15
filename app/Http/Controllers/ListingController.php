@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\poste;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -61,11 +62,7 @@ class ListingController extends Controller
 
     public function update(Request $request, Listing $listing){
         $fields =  $request->validate([
-            'title' => 'required',
-            'company' => ['required'],
-            'location' => 'required',
-            'website' => 'required',
-            'email' => ['required', 'email'],
+            
             'tags' => 'required',
             'description' => 'required'
         ]);
@@ -81,8 +78,8 @@ class ListingController extends Controller
         return back()->with('message', 'Listing updated successfully.');
     }
 
-    public function destroy(Listing $listing){
-        $listing->delete();
+    public function destroy(poste $poste){
+        $poste->delete();
         return redirect('/')->with('message', 'Listing deleted successfully.');
     }
 

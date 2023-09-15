@@ -44,6 +44,16 @@ class EtudiantController extends Controller
         $Etudiants = etudiant::all();
         return view('admin/etudiant',compact('Etudiants'));
     }
+    public function supprimeretu($id)
+    {
+        $Etudiants = etudiant::find($id);
+
+   
+        $Etudiants->delete();
+      
+        return redirect('admin/etudiant');
+    }
+ 
 }
 
 

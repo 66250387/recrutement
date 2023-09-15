@@ -20,8 +20,8 @@ class userSeeder extends Seeder
       'nom' => 'KANDO',
       'prenom' => 'Naomie',
       'role_id' => 1,
-      'email' => 'naomieka@gmail.com',
-      'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // 111111111,
+      'email' => 'naomiekan@gmail.com',
+      'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password,
     ]);
 
     $user =   User::create([

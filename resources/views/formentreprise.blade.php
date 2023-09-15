@@ -67,14 +67,7 @@
                                                                     <font color="red">{{$message}}</font>
                                                                     @enderror
                                                                 </div>
-                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                                    <div class="form-group">
-                                                                        <label>Logo:</label>
-                                                                        <input class="form-control" type="file" name="logo"/>
-                                                                        @error('logo')
-                                                                      <font color="red">{{$message}}</font>
-                                                                        @enderror
-                                                                    </div>
+                                                            
                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                 <div class="form-group">
                                                                     <label>E-mail:</label>
@@ -86,7 +79,7 @@
                                                             </div>
                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                 <div class="form-group">
-                                                                    <label>Password</label>
+                                                                    <label>mot de passe</label>
                                                                     <input class="form-control" type="password" name="password" value="{{old('password')}}"/>
                                                                     @error('password')
                                                                     <font color="red">{{$message}}</font>
@@ -95,7 +88,7 @@
                                                             </div>
                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                 <div class="form-group">
-                                                                    <label>Confirm Password</label>
+                                                                    <label>comfirmer le mot de passe</label>
                                                                     <input class="form-control" type="password" name="password_confirmation" value="{{old('password_confirmation')}}"/>
                                                                     @error('password_confirmation')
                                                                     <font color="red">{{$message}}</font>
@@ -109,11 +102,8 @@
 
                                                                 <div class="buttons-area">
 
-                                                                    <div class="form-group">
-                                                                        <input type="checkbox" name="confirm" class="input-icheck-others"/>
-                                                                        <p> Je suis d'accord <a href="#" target="_blank">termes et conditions.</a></p>
-                                                                    </div>
-                                                                    <button class="btn n-btn-flat btn-mid pull-right " type="submit">inscription</button>
+                                                                    
+                                                                    <button class="btn n-btn-flat btn-mid pull-right " type="submit">valider</button>
                                                                 </div>
                                                             </div>
                                                         </form>

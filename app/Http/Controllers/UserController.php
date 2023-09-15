@@ -7,11 +7,13 @@ use App\Models\Entreprise;
 use App\Models\Etudiant;
 use App\Models\Filiere;
 use App\Models\User;
+use App\Models\poste;
 // use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -21,8 +23,25 @@ class UserController extends Controller
         auth()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/login')->with('message', 'You have successfully logged out.');
+        return redirect('/login')->with('message', 'deconecter avec succes');
     }
+    public function supprimer($id)
+    {
+        $poste = poste::find($id);
+
+   
+        $poste->delete();
+      
+        return redirect('/listeannonce');
+    }
+    // public function delete($id)
+    // {
+    //     $poste = user::find($id);
+    //     $poste->delete('description');
+      
+    //     return redirect('/listedesannonce');
+    // }
+    
 
 
     public function login(){
@@ -50,7 +69,7 @@ class UserController extends Controller
                 return redirect('acceuil')->with('message', 'You have successfully logged in.');
             }
     
-            return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
+            return back()->withErrors(['email' => 'info incorrect'])->onlyInput('email');
      
     }
     public function create(){
@@ -134,6 +153,7 @@ class UserController extends Controller
          }
 
          public function pageacceuil(){
-            return view('acceuil');
+            $postes = poste::all();
+            return view('acceuil', compact('postes'));
         }
 }
